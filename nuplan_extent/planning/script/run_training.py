@@ -33,12 +33,12 @@ from hydra import initialize, compose
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 os.environ["PYTHONPATH"] = f"{os.getcwd()}:{os.environ.get('PYTHONPATH', '')}"
 
-gump_path='/home/users/ntu/lyuchen/scratch/keguo_projects/gump' #'/home/ke/code/GUMP'#~/scratch/keguo_projects/gump'
+gump_path='/home/ke/code/GUMP' #'/home/users/ntu/lyuchen/scratch/keguo_projects/gump' ##~/scratch/keguo_projects/gump'
 
 os.environ["NUPLAN_DEVKIT_PATH"] =gump_path+ "/third_party/nuplan-devkit"
 os.environ["NUPLAN_DATA_ROOT"] = gump_path+"/nuplan_data/dataset/nuplan-v1.1/splits/train"
 os.environ["NUPLAN_MAPS_ROOT"] =gump_path+ "/nuplan_data/dataset/maps"
-os.environ["NUPLAN_EXP_ROOT"] = gump_path
+os.environ["NUPLAN_EXP_ROOT"] = gump_path+'/exp'
 
 # Config paths
 SAVE_DIR = "./workspace/test/"
