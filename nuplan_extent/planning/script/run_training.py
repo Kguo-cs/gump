@@ -43,7 +43,7 @@ os.environ["NUPLAN_EXP_ROOT"] = gump_path
 # Config paths
 SAVE_DIR = "./workspace/test/"
 EXPERIMENT = "test_nuplan"
-CACHE_DIR = gump_path+"/home/ke/code/GUMP/save_dir/caching/caching/2025.04.12.12.02.48/cache_dir_v1_1"
+CACHE_DIR = gump_path+"/save_dir/caching/caching/2025.04.12.12.02.48/cache_dir_v1_1"
 CACHE_META_PATH = f"{CACHE_DIR}/metadata/cache_dir_v1_1_metadata_node_0.csv"
 DATA_ROOT= gump_path+"/nuplan_data/dataset/nuplan-v1.1/splits/train"
 MAP_ROOT=gump_path+"/nuplan_data/dataset/maps/"
