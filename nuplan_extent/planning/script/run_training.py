@@ -122,17 +122,20 @@ def main(cfg: DictConfig) -> Optional[TrainingEngine]:
 # Environment variables
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 os.environ["PYTHONPATH"] = f"{os.getcwd()}:{os.environ.get('PYTHONPATH', '')}"
-os.environ["NUPLAN_DEVKIT_PATH"] = "/home/ke/code/GUMP/third_party/nuplan-devkit"
-os.environ["NUPLAN_DATA_ROOT"] = "/home/ke/code/GUMP/nuplan_data/dataset/nuplan-v1.1/splits/mini"
-os.environ["NUPLAN_MAPS_ROOT"] = "/home/ke/code/GUMP/nuplan_data/dataset/maps"
+
+gump_path='~/scratch/keguo_projects/gump'
+
+os.environ["NUPLAN_DEVKIT_PATH"] =gump_path+ "/third_party/nuplan-devkit"
+os.environ["NUPLAN_DATA_ROOT"] = gump_path+"/nuplan_data/dataset/nuplan-v1.1/splits/mini"
+os.environ["NUPLAN_MAPS_ROOT"] =gump_path+ "/nuplan_data/dataset/maps"
 
 # Config paths
 SAVE_DIR = "./workspace/test/"
 EXPERIMENT = "test_nuplan"
-CACHE_DIR = "/home/ke/code/GUMP/save_dir/caching/caching/2025.04.12.12.02.48/cache_dir_v1_1"
+CACHE_DIR = gump_path+"/home/ke/code/GUMP/save_dir/caching/caching/2025.04.12.12.02.48/cache_dir_v1_1"
 CACHE_META_PATH = f"{CACHE_DIR}/metadata/cache_dir_v1_1_metadata_node_0.csv"
-DATA_ROOT="/home/ke/code/GUMP/nuplan_data/dataset/nuplan-v1.1/splits/mini"
-MAP_ROOT="/home/ke/code/GUMP/nuplan_data/dataset/maps/"
+DATA_ROOT= gump_path+"/nuplan_data/dataset/nuplan-v1.1/splits/train"
+MAP_ROOT=gump_path+"/nuplan_data/dataset/maps/"
 
 # Initialize Hydra with config path (point to your config dir, adjust as needed)
 with initialize( config_path=CONFIG_PATH):
@@ -196,7 +199,7 @@ with initialize( config_path=CONFIG_PATH):
             f"scenario_builder.data_root={DATA_ROOT}",
             f"scenario_builder.map_root={MAP_ROOT}",
             "scenario_filter.timestamp_threshold_s=15",
-            "scenario_filter.num_scenarios_per_type=10",
+            "scenario_filter.num_scenarios_per_type=1000",
             "scenario_filter.expand_scenarios=false",
             "scenario_filter.remove_invalid_goals=true",
             f"cache.cache_path={CACHE_DIR}",
