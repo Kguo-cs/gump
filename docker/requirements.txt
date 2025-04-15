@@ -13,7 +13,7 @@ pybind11==2.10.4
 cpplint
 clang-format==9.0
 fasteners
-#gin-config@git+https://github.com/HorizonRobotics/gin-config.git
+gin-config@git+https://github.com/HorizonRobotics/gin-config.git
 gym #==0.15.4
 gym3==0.3.3
 h5py==3.5.0
