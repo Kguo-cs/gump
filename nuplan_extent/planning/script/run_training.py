@@ -126,7 +126,7 @@ os.environ["PYTHONPATH"] = f"{os.getcwd()}:{os.environ.get('PYTHONPATH', '')}"
 gump_path='~/scratch/keguo_projects/gump'
 
 os.environ["NUPLAN_DEVKIT_PATH"] =gump_path+ "/third_party/nuplan-devkit"
-os.environ["NUPLAN_DATA_ROOT"] = gump_path+"/nuplan_data/dataset/nuplan-v1.1/splits/mini"
+os.environ["NUPLAN_DATA_ROOT"] = gump_path+"/nuplan_data/dataset/nuplan-v1.1/splits/train"
 os.environ["NUPLAN_MAPS_ROOT"] =gump_path+ "/nuplan_data/dataset/maps"
 
 # Config paths
