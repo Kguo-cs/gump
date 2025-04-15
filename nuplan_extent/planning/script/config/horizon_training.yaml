@@ -56,11 +56,11 @@ objective_aggregate_mode: sum
 
 # Cache parameters
 cache:
-  cache_path: /home/ke/code/GUMP/save_dir/caching/caching/2025.04.12.12.02.48/cache_dir_v1_1 #${oc.env:NUPLAN_EXP_ROOT}/cache         # Local/remote path to store all preprocessed artifacts from the data pipeline
+  cache_path: ~/scratch/keguo_projects/gump/save_dir/caching/caching/2025.04.12.12.02.48/cache_dir_v1_1 #         # Local/remote path to store all preprocessed artifacts from the data pipeline
   use_cache_without_dataset: True                    # Load all existing features from a local/remote cache without loading the dataset
   force_feature_computation: false                    # Recompute features even if a cache exists
   cleanup_cache: false                                # Cleanup cached data in the cache_path, this ensures that new data are generated if the same cache_path is passed
-  cache_metadata_path: /home/ke/code/GUMP/save_dir/caching/caching/2025.04.12.12.02.48/cache_dir_v1_1/metadata/cache_dir_v1_1_metadata_node_0.csv #null
+  cache_metadata_path: ~/scratch/keguo_projects/gump/save_dir/caching/caching/2025.04.12.12.02.48/cache_dir_v1_1/metadata/cache_dir_v1_1_metadata_node_0.csv #null
   force_recompute_features: null
   versatile_caching: false
 
