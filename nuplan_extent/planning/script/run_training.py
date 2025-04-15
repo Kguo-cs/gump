@@ -21,7 +21,9 @@ from omegaconf import DictConfig, OmegaConf
 import cv2
 import os
 from hydra import initialize, compose
+import sys
 
+sys.path.append('/home/users/ntu/lyuchen/scratch/keguo_projects/gump')
 
 # os.environ["NUPLAN_DEVKIT_PATH"] = "/home/ke/code/GUMP/third_party/nuplan-devkit"
 # os.environ["NUPLAN_DATA_ROOT"] = "/home/ke/code/GUMP/nuplan_data/dataset/nuplan-v1.1/splits/mini"
