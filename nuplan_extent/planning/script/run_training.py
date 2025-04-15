@@ -23,12 +23,30 @@ import os
 from hydra import initialize, compose
 
 
-os.environ["NUPLAN_DEVKIT_PATH"] = "/home/ke/code/GUMP/third_party/nuplan-devkit"
-os.environ["NUPLAN_DATA_ROOT"] = "/home/ke/code/GUMP/nuplan_data/dataset/nuplan-v1.1/splits/mini"
-os.environ["NUPLAN_MAPS_ROOT"] = "/home/ke/code/GUMP/nuplan_data/dataset/maps"
-os.environ["NUPLAN_EXP_ROOT"] = "/home/ke/code/GUMP"
+# os.environ["NUPLAN_DEVKIT_PATH"] = "/home/ke/code/GUMP/third_party/nuplan-devkit"
+# os.environ["NUPLAN_DATA_ROOT"] = "/home/ke/code/GUMP/nuplan_data/dataset/nuplan-v1.1/splits/mini"
+# os.environ["NUPLAN_MAPS_ROOT"] = "/home/ke/code/GUMP/nuplan_data/dataset/maps"
+# os.environ["NUPLAN_EXP_ROOT"] = "/home/ke/code/GUMP"
+#
 
+# Environment variables
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["PYTHONPATH"] = f"{os.getcwd()}:{os.environ.get('PYTHONPATH', '')}"
 
+gump_path='~/scratch/keguo_projects/gump' #'/home/ke/code/GUMP'#~/scratch/keguo_projects/gump'
+
+os.environ["NUPLAN_DEVKIT_PATH"] =gump_path+ "/third_party/nuplan-devkit"
+os.environ["NUPLAN_DATA_ROOT"] = gump_path+"/nuplan_data/dataset/nuplan-v1.1/splits/train"
+os.environ["NUPLAN_MAPS_ROOT"] =gump_path+ "/nuplan_data/dataset/maps"
+os.environ["NUPLAN_EXP_ROOT"] = gump_path
+
+# Config paths
+SAVE_DIR = "./workspace/test/"
+EXPERIMENT = "test_nuplan"
+CACHE_DIR = gump_path+"/home/ke/code/GUMP/save_dir/caching/caching/2025.04.12.12.02.48/cache_dir_v1_1"
+CACHE_META_PATH = f"{CACHE_DIR}/metadata/cache_dir_v1_1_metadata_node_0.csv"
+DATA_ROOT= gump_path+"/nuplan_data/dataset/nuplan-v1.1/splits/train"
+MAP_ROOT=gump_path+"/nuplan_data/dataset/maps/"
 
 cv2.setNumThreads(1)
 warnings.filterwarnings("ignore")
@@ -119,23 +137,6 @@ def main(cfg: DictConfig) -> Optional[TrainingEngine]:
     else:
         raise NameError(f'Function {cfg.py_func} does not exist')
 
-# Environment variables
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-os.environ["PYTHONPATH"] = f"{os.getcwd()}:{os.environ.get('PYTHONPATH', '')}"
-
-gump_path='~/scratch/keguo_projects/gump'
-
-os.environ["NUPLAN_DEVKIT_PATH"] =gump_path+ "/third_party/nuplan-devkit"
-os.environ["NUPLAN_DATA_ROOT"] = gump_path+"/nuplan_data/dataset/nuplan-v1.1/splits/train"
-os.environ["NUPLAN_MAPS_ROOT"] =gump_path+ "/nuplan_data/dataset/maps"
-
-# Config paths
-SAVE_DIR = "./workspace/test/"
-EXPERIMENT = "test_nuplan"
-CACHE_DIR = gump_path+"/home/ke/code/GUMP/save_dir/caching/caching/2025.04.12.12.02.48/cache_dir_v1_1"
-CACHE_META_PATH = f"{CACHE_DIR}/metadata/cache_dir_v1_1_metadata_node_0.csv"
-DATA_ROOT= gump_path+"/nuplan_data/dataset/nuplan-v1.1/splits/train"
-MAP_ROOT=gump_path+"/nuplan_data/dataset/maps/"
 
 # Initialize Hydra with config path (point to your config dir, adjust as needed)
 with initialize( config_path=CONFIG_PATH):

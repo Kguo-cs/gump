@@ -1,0 +1,19 @@
+2025-04-15 20:29:23,293 INFO {/home/ke/code/GUMP/third_party/nuplan-devkit/nuplan/planning/script/builders/folder_builder.py:20}  Building experiment folders...
+2025-04-15 20:29:23,293 INFO {/home/ke/code/GUMP/third_party/nuplan-devkit/nuplan/planning/script/builders/folder_builder.py:22}  Experimental folder: workspace/test/test_nuplan/caching/2025.04.15.20.29.23
+2025-04-15 20:29:23,293 INFO {/home/ke/code/GUMP/third_party/nuplan-devkit/nuplan/planning/script/builders/worker_pool_builder.py:19}  Building WorkerPool...
+2025-04-15 20:29:23,294 INFO {/home/ke/code/GUMP/third_party/nuplan-devkit/nuplan/planning/utils/multithreading/worker_pool.py:101}  Worker: SingleMachineParallelExecutor
+2025-04-15 20:29:23,294 INFO {/home/ke/code/GUMP/third_party/nuplan-devkit/nuplan/planning/utils/multithreading/worker_pool.py:102}  Number of nodes: 1
+Number of CPUs per node: 1
+Number of GPUs per node: 0
+Number of threads across all nodes: 1
+2025-04-15 20:29:23,294 INFO {/home/ke/code/GUMP/third_party/nuplan-devkit/nuplan/planning/script/builders/worker_pool_builder.py:27}  Building WorkerPool...DONE!
+2025-04-15 20:29:23,294 INFO {/home/ke/code/GUMP/third_party/nuplan-devkit/nuplan/planning/script/builders/scenario_building_builder.py:18}  Building AbstractScenarioBuilder...
+2025-04-15 20:29:23,299 INFO {/home/ke/code/GUMP/third_party/nuplan-devkit/nuplan/planning/script/builders/scenario_building_builder.py:21}  Building AbstractScenarioBuilder...DONE!
+2025-04-15 20:29:23,300 INFO {/home/ke/code/GUMP/third_party/nuplan-devkit/nuplan/planning/script/builders/scenario_filter_builder.py:35}  Building ScenarioFilter...
+2025-04-15 20:29:23,300 INFO {/home/ke/code/GUMP/third_party/nuplan-devkit/nuplan/planning/script/builders/scenario_filter_builder.py:44}  Building ScenarioFilter...DONE!
+2025-04-15 20:29:27,784 INFO {/home/ke/code/GUMP/third_party/nuplan-devkit/nuplan/planning/training/experiments/caching.py:192}  Starting dataset caching of 5456 files...
+2025-04-15 20:29:27,784 INFO {/home/ke/code/GUMP/third_party/nuplan-devkit/nuplan/planning/script/builders/model_builder.py:18}  Building TorchModuleWrapper...
+2025-04-15 20:29:29,071 INFO {/home/ke/code/GUMP/nuplan_extent/planning/training/modeling/models/gump_v1_1.py:77}  loading pretrained weights: None
+2025-04-15 20:29:29,071 INFO {/home/ke/code/GUMP/third_party/nuplan-devkit/nuplan/planning/script/builders/model_builder.py:21}  Building TorchModuleWrapper...DONE!
+2025-04-15 20:29:29,083 INFO {/home/ke/code/GUMP/third_party/nuplan-devkit/nuplan/planning/training/experiments/caching.py:73}  Extracted 5456 scenarios for thread_id=622d3e9a-99cf-4fbf-a243-96756bde2c27, node_id=0.
+2025-04-15 20:29:29,083 INFO {/home/ke/code/GUMP/third_party/nuplan-devkit/nuplan/planning/training/experiments/caching.py:79}  Processing scenario 1 / 5456 in thread_id=622d3e9a-99cf-4fbf-a243-96756bde2c27, node_id=0
