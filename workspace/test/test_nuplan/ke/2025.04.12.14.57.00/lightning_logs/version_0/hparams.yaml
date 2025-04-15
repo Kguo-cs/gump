@@ -1,0 +1,77 @@
+aggregated_metrics:
+- !!python/object:nuplan_extent.planning.training.modeling.aggregated_metrics.dummy_aggregated_metrics.DummyAggregatedMetric
+  _LIGHTNING_GREATER_EQUAL_1_3: true
+  _backward_hooks: !!python/object/apply:collections.OrderedDict
+  - []
+  _backward_pre_hooks: !!python/object/apply:collections.OrderedDict
+  - []
+  _buffers: !!python/object/apply:collections.OrderedDict
+  - []
+  _cache: null
+  _computed: null
+  _defaults: {}
+  _device: !!python/object/apply:torch.device
+  - cpu
+  _forward_cache: null
+  _forward_hooks: !!python/object/apply:collections.OrderedDict
+  - []
+  _forward_hooks_always_called: !!python/object/apply:collections.OrderedDict
+  - []
+  _forward_hooks_with_kwargs: !!python/object/apply:collections.OrderedDict
+  - []
+  _forward_pre_hooks: !!python/object/apply:collections.OrderedDict
+  - []
+  _forward_pre_hooks_with_kwargs: !!python/object/apply:collections.OrderedDict
+  - []
+  _is_full_backward_hook: null
+  _is_synced: false
+  _load_state_dict_post_hooks: !!python/object/apply:collections.OrderedDict
+  - []
+  _load_state_dict_pre_hooks: !!python/object/apply:collections.OrderedDict
+  - []
+  _modules: !!python/object/apply:collections.OrderedDict
+  - []
+  _name: dummy_aggregated_metrics
+  _non_persistent_buffers_set: !!set {}
+  _parameters: !!python/object/apply:collections.OrderedDict
+  - []
+  _persistent: {}
+  _reductions: {}
+  _should_unsync: true
+  _state_dict_hooks: !!python/object/apply:collections.OrderedDict
+  - []
+  _state_dict_pre_hooks: !!python/object/apply:collections.OrderedDict
+  - []
+  _to_sync: true
+  _update_called: false
+  compute_on_step: true
+  dist_sync_fn: null
+  dist_sync_on_step: false
+  process_group: null
+  training: true
+batch_size: 1
+lr_scheduler:
+  _convert_: all
+  _target_: torch.optim.lr_scheduler.MultiStepLR
+  gamma: 0.2
+  milestones:
+  - 8
+  - 13
+metrics:
+- !!python/object:nuplan_extent.planning.training.modeling.metrics.dummy_metric.DummyMetric {}
+objective_aggregate_mode: sum
+objectives:
+- !!python/object:nuplan_extent.planning.training.modeling.objectives.masked_cross_entrophy_objective_v1_1.MaskedCrossEntrophyObjectiveV1_1
+  _name: cross_entrophy_objective
+  _weight: 1.0
+  _weight_agent: 1.0
+  _weight_ctrl: 0.1
+optimizer:
+  _convert_: all
+  _target_: torch.optim.AdamW
+  betas:
+  - 0.9
+  - 0.999
+  lr: 0.0001
+  weight_decay: 0.001
+warm_up_lr_scheduler: null
